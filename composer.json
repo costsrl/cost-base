@@ -1,5 +1,5 @@
 {
-  "name" : "cost/cost-base",
+  "name" : "costsrl/cost-base",
   "description" : "Basic class /service  based on Laminas ",
   "require" : {
     "php" : ">=7.0"
@@ -12,7 +12,7 @@
       "CostBase\\" : "src/"
     }
   },
-  "type" : "module zf3",
+  "type" : "library",
   "homepage" : "http://www.cost.it",
   "authors" : [ {
     "name" : "Renato Salvatori",
