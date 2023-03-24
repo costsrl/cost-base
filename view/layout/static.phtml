@@ -1,0 +1,97 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle($this->translate('default_meta_title'))->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ->appendName('revisit-after', '1 day')
+        ->appendName('robots', 'INDEX, FOLLOW')
+    ?>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//google-analytics.com" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+        ->prependStylesheet($this->basePath() . '/css/select2-bootstrap.css')
+        ->prependStylesheet($this->basePath() . '/css/select2.css')
+        ->prependStylesheet($this->basePath() . '/css/custom-mediaqueries.css')
+        ->prependStylesheet($this->basePath() . '/css/derev.css')
+        ->prependStylesheet($this->basePath() . '/css/colors/base.css')
+        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        ->prependStylesheet($this->basePath() . '/css/font-awesome.min.css')
+        ->prependStylesheet($this->basePath() . '/css/owlcarousel.css')
+        ->prependStylesheet($this->basePath() . '/css/royalslider.css')
+        ->prependStylesheet($this->basePath() . '/css/rs-default.css')
+        ->prependStylesheet($this->basePath() . '/css/datepicker.css')
+        ->prependStylesheet($this->basePath() . '/css/editor.css')
+        ->prependStylesheet($this->basePath() . '/css/editor-theme.css')
+        ->prependStylesheet($this->basePath() . '/css/jquery-minicolors.css')
+        ->prependStylesheet($this->basePath() . '/js/timeline/css/flat.css')
+        ->prependStylesheet($this->basePath() . '/js/timeline/css/jquery.mCustomScrollbar.css');
+?>
+   <link rel="shortcut icon" type="image/png" href="/img/favicon-16x16.png"/>
+    <link rel="shortcut icon" type="image/png" href="/img/favicon-32x32.png"/>
+
+<!--[if lt IE 9]>
+    <link href="/js/timeline/css/ie8fix.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+</head>
+<body>
+<div class="wrapper">
+
+    
+
+    <?php //echo $this->partial('partial/header', array('esempio_parametro_passato' => 1));?>
+    <?php echo $this->partial('partial/header'); ?>
+ <div class="mainContainer">
+
+    <?php if (!empty($this->layout()->nonFlashMessageSuccess)): ?>
+        <strong><ul class="warning"><li><?php echo $this->layout()->nonFlashMessageSuccess; ?></li></ul></strong>
+    <?php endif; ?>
+    <strong><?php echo $this->flashMessenger()->render('success'); ?></strong>
+    <strong><?php echo $this->flashMessenger()->render(); ?></strong>
+    <strong><?php echo $this->flashMessenger()->render('error'); ?></strong>
+
+
+    <?php echo $this->content; ?>
+
+    <?php echo $this->inlineScript() ?>
+</div>
+
+    <?php echo $this->partial('partial/footer'); ?>
+</div> <!-- /wrapper-->
+
+<!-- Scripts -->
+<?php echo $this->headScript()
+    ->prependFile($this->basePath() . '/js/timeline/js/image.js', 'text/javascript')
+    ->prependFile($this->basePath() . '/js/timeline/js/jquery.timeline.min.js', 'text/javascript')
+    ->prependFile($this->basePath() . '/js/timeline/js/jquery.easing.1.3.js', 'text/javascript')
+    ->prependFile($this->basePath() . '/js/timeline/js/jquery.mCustomScrollbar.js', 'text/javascript')
+    ->prependFile($this->basePath() . '/js/select2.min.js', 'text/javascript')
+    ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+    ->prependFile($this->basePath() . '/js/owl-carousel/owl.carousel.js')
+    ->prependFile($this->basePath() . '/js/retina.js')
+    ->prependFile($this->basePath() . '/js/bootstrap-datepicker.js')
+    ->prependFile($this->basePath() . '/js/fluidvids.js')
+    ->prependFile($this->basePath() . '/js/jquery.royalslider.min.js')
+    ->prependFile($this->basePath() . '/js/back-to-top.js')
+    ->prependFile($this->basePath() . '/js/editor.min.js')
+    ->prependFile($this->basePath() . '/js/editor_ie8.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+    ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+    ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ->prependFile($this->basePath() . '/js/jquery.min.js')
+; ?>
+<?php echo $this->placeholder('bottomScripts') ?>
+
+<?php echo $this->partial('partial/analytics'); ?>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?php 
+return array(
+    'cost-base'=>array(
+            'tableGatewayEventFeauture'=>true,
+            'tableGatewayGlobalAdapter'=>true,
+            'dbAdapterServiceManagerKey' =>[\Laminas\Db\Adapter\Adapter::class]
+            /*'mapTableGateway'=>[
+                'roles'         => 'EXT_ROLES',
+                'resources'     => 'EXT_RESOURCES',
+                'permissions'   => 'EXT_PERMISSIONS',
+                'languages'     => 'EXT_LANGUAGES',
+                'menus'         => 'EXT_MENUES'
+            ]
+            */
+        )
+);
+
+
+?>

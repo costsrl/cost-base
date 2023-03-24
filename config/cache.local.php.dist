@@ -1,0 +1,51 @@
+<?php
+return array(
+    // Cache that is used only for storing and fetching data without any form of convertion.
+    'cache' => array (
+        'adapter' => array(
+            'name' => 'filesystem',
+            'options' => array (
+                'cache_dir' => __DIR__.'/../../data/cache/text',
+                'ttl'       => 180,
+            )
+        ),
+
+        'plugins' => array(
+            // Don't throw exceptions on cache errors
+            'exception_handler' => array(
+                'throw_exceptions' => false
+            ),
+        	'serializer' => array (
+        				'serializer' => 'Laminas\Serializer\Adapter\PhpSerialize',
+        		)
+        )
+    ),
+
+    // This cache allows us to store variables in a serialized form
+    'var-cache' => array (
+        'adapter' => array(
+            'name' => 'filesystem',
+            'options' => array (
+                'cache_dir' =>  __DIR__.'/../../data/cache/var',
+                'ttl'       =>180,
+            )
+        ),
+        'plugins' => array(
+            // Don't throw exceptions on cache errors
+            'exception_handler' => array(
+                'throw_exceptions' => false
+            ),
+        	'serializer' => array (
+        		  'serializer' => 'Laminas\Serializer\Adapter\PhpSerialize',
+        	)
+        )
+    ),
+
+    'cache-enabled-services' => array(
+    	'translator',
+    ),
+
+    'cache-enabled-classes' => array(
+    	//'\\Laminas\\Paginator\\Paginator',
+    )
+);

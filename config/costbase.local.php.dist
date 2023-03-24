@@ -1,0 +1,17 @@
+<?php 
+return array(
+    'cost-base'=>array(
+         'tableGatewayEventFeuture'=>true,
+         'tableGatewayGlobalAdapter'=>true,
+         'mapTableGateway'=>[
+                'roles'         => 'roles',
+                'resources'     => 'resources',
+                'permissions'   => 'permissions',
+                'languages'     => 'languages',
+                'menus'         => 'menus'
+            ]
+    )
+);
+
+
+?>

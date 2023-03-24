@@ -1,0 +1,23 @@
+{
+  "name" : "cost/cost-base",
+  "description" : "Basic class /service  based on Laminas ",
+  "require" : {
+    "php" : ">=7.0"
+  },
+  "license" : "BSD-3-Clause",
+  "keywords" : [ "zf3", "Cost-base" ],
+  "minimum-stability" : "dev",
+  "autoload" : {
+    "psr-4" : {
+      "CostBase\\" : "src/"
+    }
+  },
+  "type" : "module zf3",
+  "homepage" : "http://www.cost.it",
+  "authors" : [ {
+    "name" : "Renato Salvatori",
+    "email" : "renato.s@cost.it",
+    "homepage" : "http://www.cost.it",
+    "role" : "Developer"
+  } ]
+}
